@@ -1,0 +1,662 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Growth Academy</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="b17fdcfc-d091-404e-a9f6-df6c9e86a7ec" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🏍️</span></div><h1 class="page-title">Growth Academy</h1></header><div class="page-body"><p id="3e70e061-c1c1-4272-9f14-f22aa3f2ec6b" class="">
+</p><p id="b254ce42-31e2-463e-886c-b3068b251d36" class=""><a href="https://ondemand.growth-academy.com/path-player?courseid=gfs-brasil-21-1&amp;unit=60638fa1fc128d097237517aUnit">Link de acesso</a></p><p id="573a0c66-3556-4855-9371-94d55bd71375" class="">
+</p><h1 id="badb9d1b-9f48-444c-a2c0-fe050b574d32" class="">1 - Foundations and growth models intro</h1><h2 id="aca4e6f3-6e32-4f3b-9a71-527f863be80f" class="">Importance of retention</h2><p id="da6d1647-1591-49f9-97f0-73801eb1643c" class="">
+</p><p id="e3572c65-97b2-4d01-838c-11b8bd688958" class="">Blue Apron (startup)</p><p id="83d1b090-9edf-4848-b41a-1b437ef35316" class="">Blue Apron was looking at acquisition, not retention</p><p id="15a43ef2-3c2f-4543-bf68-bbe56723d391" class="">
+</p><p id="134fff2c-e25e-4dda-a419-222513940b7a" class="">Prioritizing retention pays off</p><ul id="7027cf94-8248-46de-aa93-de0ea217f010" class="bulleted-list"><li>higher market share</li></ul><ul id="8719e243-9b98-4fa9-80eb-ce77ac2c9264" class="bulleted-list"><li>less churn</li></ul><p id="68f8dff3-008d-4f6e-9ee3-1dd52b3f3d3c" class="">
+</p><h2 id="751502fd-5685-402e-801a-f04fb2c45da7" class="">Growth modeling</h2><p id="672d94f6-39c1-4f75-92b1-8e9831034b79" class="">
+</p><p id="6a3468a7-1038-4c03-baa9-dd47cd1fe202" class="">elements of growth model</p><ol id="40382f4a-d12b-4a1e-8b62-320a46d812a6" class="numbered-list" start="1"><li>signup up</li></ol><ol id="0af631db-b3eb-42ac-b2c1-2d89e3057f9f" class="numbered-list" start="2"><li>activation</li></ol><ol id="2258dfdb-4086-49e9-8daa-ce1b9275075b" class="numbered-list" start="3"><li>engagement</li></ol><ol id="992622eb-77fc-4279-abb9-0a1af3b625bb" class="numbered-list" start="4"><li>churn/re-engagement</li></ol><p id="b6696bed-8bb3-46ac-adc7-3b2b18a5a4bb" class="">
+</p><p id="cdc23cb1-75e7-4617-bf4d-198d86344786" class="">Levers to increase retention:</p><ol id="23f01782-5436-4f7e-b08b-e417c69d96ce" class="numbered-list" start="1"><li>Activation<p id="8ccd9a49-0682-4a6e-bbfa-341ccdf97161" class="">
+Setup moment</p><p id="b2a151ef-bd00-46e6-b0fc-fe0746dea357" class="">Get users to perform initial actions that <code>enable</code> value</p><p id="8c1145cf-219d-4d02-a649-6d142300b2cb" class="">
+Magic moment</p><p id="26a3c375-9002-414d-be3d-1697c6f9fd7a" class="">Get users to <code>experience</code> value</p><p id="1f402fdc-35a1-4115-a7d7-0e830b64c44e" class="">
+</p></li></ol><ol id="800bff1d-4cd8-4b33-99e8-ccd33e804d84" class="numbered-list" start="2"><li>Engagement</li></ol><p id="dd0c7d26-1296-48ef-940f-8ad2a0c3915a" class=""><div class="indented"><p id="41b033ba-0428-486d-a8de-a506e6e2b8cd" class="">Routine moment</p><p id="f59d9374-e1f2-4339-9ae2-533e844b2f9b" class="">Support users to include the product or service on their <code>existing</code> routines</p><p id="55f11413-6a4f-483a-acdc-6814afa6d52b" class="">
+</p><p id="773ebd0f-eee4-4686-8527-f439753d75bc" class="">Expansion moment</p><p id="460c2db3-d06b-44ee-930a-b1e4c76fa4ec" class="">Help users <code>deepen</code> engagement and spend time with the product or service</p></div></p><p id="161d3349-67cd-430a-9cee-d86dd25aa547" class="">
+</p><p id="b849fe89-644a-4b23-add9-12054420127e" class="">3. Churn<div class="indented"><p id="f2eaa9bd-27c7-4a75-a849-f94a2a7056b8" class=""><div class="indented"><p id="544aff3d-2537-48d9-82ed-06eb30001886" class="">Win-back moment</p><p id="be3f0b4d-60be-4d88-9283-5bdaafa5b0a6" class="">Find the right time and tactic to <code>change</code> their opinion and get users to try again.</p></div></p></div></p><p id="4c6a211c-9c5a-497f-9c26-d2605bd9d546" class="">
+</p><h2 id="4d2a3208-6598-4b6f-83e8-a6422e2f5798" class="">Retention over acquistion</h2><p id="6b64a564-1ed7-434c-8c7a-691185a24dc1" class="">
+</p><p id="a981f9e4-d521-4685-9a08-fb409cb65904" class="">Effects of bad retention can be delayed</p><p id="74289c71-3945-486e-9ef1-76254eb11f0a" class="">
+</p><p id="6f5323c0-1cf2-46f6-8077-a09b82f773c7" class="">The longer you keep them, the better value they get from your business</p><p id="47ece543-9428-4166-a863-d4bc3f71fdd3" class="">
+</p><h2 id="b2afa8ff-3918-4b08-8f04-194846a77020" class="">2 - Retention framework</h2><h3 id="9af5edee-976e-4a11-a576-2440bddefa07" class="">1. leverage organic activities in your retention</h3><p id="fa387698-d3d9-46b1-bab7-60b4e6c3de1a" class="">
+</p><p id="6f02c998-b69a-485d-a862-5547816da56a" class="">what users think &gt; growth trigger</p><p id="65643c95-6837-4c17-8706-35217eab8de9" class="">
+</p><p id="31d68e1f-945e-47dc-a1f7-d2ec771703b1" class="">You can have a framework for each public</p><p id="2bb52c30-a2c8-462c-906a-4c44cb5a694d" class="">
+</p><p id="a23ed22f-f6b1-4ea5-aae7-c8d1aa374cfc" class="">goal 1</p><p id="5c67946e-8b2d-4127-986b-201e70bfe08c" class="">what users wants to achive</p><p id="f37d2e06-c832-4cf1-9355-4d789c8b1016" class="">mailchimp = send effective emails to all customers</p><p id="ac6cc9fe-010a-4bf9-96de-13de362305bf" class="">
+</p><p id="00cc4eb6-ea02-404b-9e09-09b4afb45481" class="">goal 2</p><p id="6143e988-2268-46db-9122-23b746c90435" class="">problem that keeps user form achieving the goal
+mailchimp = creating and sending is complicated and time-intensive</p><p id="f00bd49b-1750-40cb-8434-6a38bf7a87c7" class="">
+</p><p id="d0b480ba-149c-4499-8fe7-cce3aef4ad0a" class="">goal 3</p><p id="5af51cc5-f18c-4e07-8e53-6fbe885dd9d9" class="">solution that you provide to solve the problem</p><p id="edafc89a-ac17-413c-b2e3-ad225cbd73da" class="">mailchimp = intuitive interface and beautiful templates</p><p id="43c3c3a3-3873-4957-90f3-d69399a50243" class="">
+</p><p id="55740c9e-fa27-4ab1-a004-00cbaa6090cd" class="">goal 4</p><p id="26003a15-69b4-4000-9139-6a1ab296f9bc" class="">how ofter does the problem occur</p><p id="f4c298c5-387f-45c8-9752-92c04ae866bd" class="">mailchimp = weekly</p><p id="69d69b67-6b2e-460e-9827-3eaa67a96373" class="">
+</p><h3 id="13582bf8-efc5-4f49-a06f-473a79ef6811" class="">2. determine the right retention metric</h3><p id="613f26bf-5e28-4be1-a98b-46d010734e2d" class="">
+</p><figure id="4eb4ce78-ed07-43e3-991e-47615b5aaaf1" class="image"><a href="Growth%20Academy%204eb4ce78ed0743e3991e47615b5aaaf1/Untitled.png"><img style="width:2134px" src="Growth%20Academy%204eb4ce78ed0743e3991e47615b5aaaf1/Untitled.png"/></a></figure><p id="eca376cf-1dcd-4110-8044-2476ce9fd152" class="">
+</p><figure id="f2ab4853-97ca-494e-b5c2-12428bf72a88" class="image"><a href="Growth%20Academy%204eb4ce78ed0743e3991e47615b5aaaf1/Untitled%201.png"><img style="width:2154px" src="Growth%20Academy%204eb4ce78ed0743e3991e47615b5aaaf1/Untitled%201.png"/></a></figure><p id="b50ee1b8-4697-479b-88a8-0a427ca4f86f" class="">
+</p><figure id="75208c6b-4c0d-4fd0-84f5-08014063b9aa" class="image"><a href="Growth%20Academy%204eb4ce78ed0743e3991e47615b5aaaf1/Untitled%202.png"><img style="width:2126px" src="Growth%20Academy%204eb4ce78ed0743e3991e47615b5aaaf1/Untitled%202.png"/></a></figure><p id="cb728994-d7ba-4070-a5cb-2e2bf29b0e0d" class="">
+</p><h3 id="0b029c65-6795-4375-96a7-17b44e4b7591" class="">3. analyze and understand retention</h3><p id="5f6d136f-f0fd-488f-875e-bec2fda0c029" class="">
+</p><figure id="cbfd6283-f924-424d-9e7f-4d2e8021d0f3" class="image"><a href="Growth%20Academy%204eb4ce78ed0743e3991e47615b5aaaf1/Untitled%203.png"><img style="width:2880px" src="Growth%20Academy%204eb4ce78ed0743e3991e47615b5aaaf1/Untitled%203.png"/></a></figure><p id="43d108c9-2041-4072-b7a2-746a728831e0" class="">
+</p><h2 id="ffcef771-9b69-4f8a-a712-015796b1f6d6" class="">3 - Strategies to improve retention</h2><p id="51c6887c-3015-4b3a-b075-58f8c08237dd" class="">
+</p><p id="de9d22c2-a999-4120-9fc7-45fe48504fb3" class="">
+</p><figure id="a982fb99-6754-4c0a-9d04-ac765eaa5997" class="image"><a href="Growth%20Academy%204eb4ce78ed0743e3991e47615b5aaaf1/Untitled%204.png"><img style="width:2880px" src="Growth%20Academy%204eb4ce78ed0743e3991e47615b5aaaf1/Untitled%204.png"/></a></figure><p id="bb9370b7-e180-4b0b-9a8c-bf3b243c3d94" class="">
+</p><figure id="a6db068b-c2ec-4e22-9141-98e8cdabec2d" class="image"><a href="Growth%20Academy%204eb4ce78ed0743e3991e47615b5aaaf1/Untitled%205.png"><img style="width:2880px" src="Growth%20Academy%204eb4ce78ed0743e3991e47615b5aaaf1/Untitled%205.png"/></a></figure><p id="edfeec44-be0e-4817-9ccc-9a4ba8052ac7" class="">
+</p><figure id="e015dcca-cc51-4263-b7a0-f6340ce97016" class="image"><a href="Growth%20Academy%204eb4ce78ed0743e3991e47615b5aaaf1/Untitled%206.png"><img style="width:2880px" src="Growth%20Academy%204eb4ce78ed0743e3991e47615b5aaaf1/Untitled%206.png"/></a></figure><p id="69173fda-83e7-4c5c-b596-7e8be23114ab" class="">
+</p><figure id="e1ae9bca-6cc0-4bdb-abb3-0082dc2102b2" class="image"><a href="Growth%20Academy%204eb4ce78ed0743e3991e47615b5aaaf1/Untitled%207.png"><img style="width:2880px" src="Growth%20Academy%204eb4ce78ed0743e3991e47615b5aaaf1/Untitled%207.png"/></a></figure></div></article></body></html>
